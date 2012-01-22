@@ -1,0 +1,12 @@
+Tato solutiona obsahuje IoC kontejner Fim.Accord a jeho unitové testy:
+ 
+ Pro obecný popis øešení ---> viz dokumentace (bakaláøská práce)
+
+ Poznámka: Kody jsou dokumentovány pøevážne v angliètinì, 
+ tak aby mohl být projekt v budoucnu umístìn na web jako OpenSource.
+
+ 
+
+
+
+
