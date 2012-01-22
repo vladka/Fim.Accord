@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="ConcurrentDictionary&lt;Type, List&lt;IConfiguredPluginResolverInternal&gt;&gt;&#xD;&#xA;">
+    <Position X="5.73" Y="2.903" Height="0.291" Width="5.06" />
+  </Comment>
+  <Comment CommentText="Context vzniká vždy během resolvování instance">
+    <Position X="2.012" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Resolver musí vědět, v jakém scopu má instanci hledat/vrátit">
+    <Position X="7.03" Y="3.816" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Pokud Resolver vznikl na základě otevřené generické definice, musí o ní vědět">
+    <Position X="2.11" Y="14.048" Height="0.922" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Všechny resolvovací třídy, musí mít odkaz na třídu, která vytváří instance">
+    <Position X="7.978" Y="13.521" Height="0.885" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Třídy implementující toto rozhraní používají Func&lt;T&gt; k vytváření instancí">
+    <Position X="9.401" Y="4.184" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Asynchronní vlákno pravidelně kontrolující, zda jsou všecny objekty kontextů živé">
+    <Position X="12.088" Y="3.914" Height="0.909" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Tabulka všech objektů kontextů a k nim přidružených instancí">
+    <Position X="17.54" Y="7.398" Height="0.704" Width="1.7" />
+  </Comment>
+  <Class Name="Fim.Accord.BuildingContext">
+    <Position X="3.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAA=</HashCode>
+      <FileName>BuildingContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentResolver" />
+      <Property Name="Container" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Fim.Accord.Container">
+    <Position X="0.5" Y="1.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Fim.Accord.Container.ContainerConfigurationManager" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.ContainerConfigurationManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Fim.Accord.Container.ResolverBase" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.Resolver.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Fim.Accord.Container.Resolver&lt;TPluginType, TPreviousPluginType&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.Resolver.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Fim.Accord.Container.Resolver" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.Resolver.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Fim.Accord.Container.Resolver&lt;TPluginType, TPreviousPluginType, TPreviousPluginType2&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.Resolver.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Fim.Accord.Container.Resolver&lt;TPluginType&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Container.Resolver.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="GlobalScopeTable" Type="Fim.Accord.GlobalScopeTable">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.01" Y="0.261" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEQBAAAAACEEIAEAiEBAAAAAADABQACAAAAQAAACEEA=</HashCode>
+      <FileName>Container.ContainerConfigurationManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="AllResolvers" />
+      <Field Name="GlobalScopeTable" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fim.Accord.GlobalScopeTable">
+    <Position X="15.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAIACAEAAAAAAAAAAAAAAAABAAAIAAACAACAIA=</HashCode>
+      <FileName>GlobalScopeTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_async" />
+      <Field Name="_all" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.Concurrent.ConcurrentDictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="11.75" Y="3" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Threading.Thread" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fim.Accord.Resolvers.ConfiguredResolver&lt;TPluginType, TImplType&gt;">
+    <Position X="4" Y="9.25" Width="2.5" />
+    <AssociationLine Name="_owner" Type="Fim.Accord.Container" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="11.119" />
+        <Point X="3.625" Y="11.119" />
+        <Point X="3.625" Y="10.53" />
+        <Point X="3.078" Y="10.53" Type="JumpStart" />
+        <Point X="2.912" Y="10.53" Type="JumpEnd" />
+        <Point X="2.75" Y="10.53" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.153" Y="-0.255" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="IConfiguredPluginResolverInternal.Factory" Type="Fim.Accord.IConfiguredFactoryInternal" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="9.975" />
+        <Point X="7.104" Y="9.975" Type="JumpStart" />
+        <Point X="7.271" Y="9.975" Type="JumpEnd" />
+        <Point X="8.812" Y="9.975" />
+        <Point X="8.812" Y="7.261" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.284" Y="2.775" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Factory" Type="Fim.Accord.IConfiguredFactoryInternal&lt;TCommonType&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.09" Y="-0.232" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACIgACAACAAACBAIQAAAAUAAAAAAAAAAAAAAQACEAA=</HashCode>
+      <FileName>Resolvers\ConfiguredPluginResolver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_owner" />
+      <Field Name="_scope" />
+      <Property Name="IConfiguredPluginResolverInternal.Factory" />
+      <Property Name="Factory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fim.Accord.Resolvers.ConfiguredPluginResolver">
+    <Position X="4" Y="3.75" Width="2.25" />
+    <AssociationLine Name="Creator" Type="Fim.Accord.Resolvers.OpenedGenericPluginResolver" ManuallyRouted="true">
+      <Path>
+        <Point X="4" Y="6.584" />
+        <Point X="2.995" Y="6.584" />
+        <Point X="2.995" Y="15.888" />
+        <Point X="4" Y="15.888" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_scope" Type="Fim.Accord.IScope" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="6.562" />
+        <Point X="7.328" Y="6.562" />
+        <Point X="7.328" Y="7.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIgACAACAAACBAIQAAAAUAAAAAAAAAEAAAAQACEAA=</HashCode>
+      <FileName>Resolvers\ConfiguredPluginResolver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_owner" />
+      <Field Name="Creator" />
+      <Field Name="_scope" />
+      <Property Name="Factory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fim.Accord.Resolvers.OpenedGenericPluginResolver">
+    <Position X="4" Y="14" Width="2.25" />
+    <AssociationLine Name="_container" Type="Fim.Accord.Container">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.078" Y="0.912" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_scope" Type="Fim.Accord.IScope" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="14.188" />
+        <Point X="7.188" Y="14.188" />
+        <Point X="7.188" Y="8.853" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.746" Y="0.614" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Factory" Type="Fim.Accord.IConfiguredFactoryInternal" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="14.625" />
+        <Point X="11.123" Y="14.625" />
+        <Point X="11.123" Y="7.386" />
+        <Point X="10.312" Y="7.386" />
+        <Point X="10.312" Y="7.261" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEoAACAICAAEChAIQEAACUAAAAAAAAAAIAAEAACEAA=</HashCode>
+      <FileName>Resolvers\OpenedGenericPluginResolver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_container" />
+      <Field Name="_scope" />
+      <Property Name="Factory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fim.Accord.ScopeTable">
+    <Position X="12" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAACAAAAAAAAAABAAQAAAABAAAIIAAAAECAAA=</HashCode>
+      <FileName>ScopeTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_globalScopeTable" />
+      <Field Name="_owner" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Fim.Accord.IConfiguredPluginResolver">
+    <Position X="7.25" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAACAAAAAAAAEAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>IConfiguredPluginResolver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Scope" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Fim.Accord.IScope">
+    <Position X="7" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IScope.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Fim.Accord.IConfiguredFactoryInternal&lt;TCommonType&gt;">
+    <Position X="7.5" Y="10.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IConfiguredFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Fim.Accord.IConfiguredFactoryInternal">
+    <Position X="8.25" Y="5" Width="2.25" />
+    <AssociationLine Name="ScopedValues" Type="Fim.Accord.ScopeTable" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="6.313" />
+        <Point X="12" Y="6.313" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAhAAAEABAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>IConfiguredFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ScopedValues" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
